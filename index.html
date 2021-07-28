@@ -7,18 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    third party cookies are <span id="result"></span>
-    <iframe src="https://soufianeym-eng.github.io/cookie-check/start.html" style="display:none" ></iframe>
-    
-    <script>
-        var receiveMessage = function (evt) {
-            if (evt.data === 'MM:3PCunsupported') {
-                document.getElementById('result').innerHTML = 'not supported';
-            } else if (evt.data === 'MM:3PCsupported') {
-                document.getElementById('result').innerHTML = 'supported';
-            }
-            };
-            window.addEventListener("message", receiveMessage, false);
-    </script>
+    third party cookies are <span id="result"/>
+    <iframe src="https://mindmup.github.io/3rdpartycookiecheck/start.html" style="display:none" ></iframe>
+
+
+    <script type="text/javascript">
+
+
+    var receiveMessage = function (evt) {
+    if (evt.data === 'MM:3PCunsupported') {
+        document.getElementById('result').innerHTML = 'not supported';
+    } else if (evt.data === 'MM:3PCsupported') {
+        document.getElementById('result').innerHTML = 'supported';
+    }
+    };
+    window.addEventListener("message", receiveMessage, false);
+</script>
 </body>
 </html>
