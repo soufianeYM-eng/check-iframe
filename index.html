@@ -4,8 +4,10 @@ third party cookies are <span id="result"/>
 <script>
     var receiveMessage = function (evt) {
         if (evt.data === 'MM:3PCunsupported') {
+            console.log('Supported')
             document.getElementById('result').innerHTML = 'not supported';
         } else if (evt.data === 'MM:3PCsupported') {
+            console.log('Not Supported')
             document.getElementById('result').innerHTML = 'supported';
         }
         };
