@@ -12,16 +12,16 @@
 
 
     <script type="text/javascript">
-
-
     var receiveMessage = function (evt) {
-    if (evt.data === 'MM:3PCunsupported') {
-        document.getElementById('result').innerHTML = 'not supported';
-    } else if (evt.data === 'MM:3PCsupported') {
-        document.getElementById('result').innerHTML = 'supported';
-    }
+        if (evt.data === 'MM:3PCunsupported') {
+            console.log('Not Supported')
+            document.getElementById('result').innerHTML = 'not supported';
+        } else if (evt.data === 'MM:3PCsupported') {
+            console.log('Supported')
+            document.getElementById('result').innerHTML = 'supported';
+        }
     };
     window.addEventListener("message", receiveMessage, false);
-</script>
+    </script>
 </body>
 </html>
