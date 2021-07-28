@@ -1,2 +1,13 @@
 third party cookies are <span id="result"/>
 <iframe src="https://soufianeym-eng.github.io/cookie-check/cookie.html" style="display:none" ></iframe>
+
+<script>
+    var receiveMessage = function (evt) {
+        if (evt.data === 'MM:3PCunsupported') {
+            document.getElementById('result').innerHTML = 'not supported';
+        } else if (evt.data === 'MM:3PCsupported') {
+            document.getElementById('result').innerHTML = 'supported';
+        }
+        };
+        window.addEventListener("message", receiveMessage, false);
+</script>
