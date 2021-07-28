@@ -10,15 +10,16 @@
     <iframe src="https://mindmup.github.io/3rdpartycookiecheck/start.html"
     style="display:none" />
 <script>
- var receiveMessage = function (evt) {
-   if (evt.data === 'MM:3PCunsupported') {
-       console.log(evt.data);
-       console.log('Not supported');
-    } else if (evt.data === 'MM:3PCsupported') {
-       console.log(evt.data);
-       console.log('Supported');
-   }
- };
+    if (window.parent) {
+        if (/thirdparty=yes/.test(document.cookie)) {
+            console.log('Confirmed')
+            window.parent.postMessage('MM:3PCsupported', '*');
+        } else {
+            console.log('Not Confirmed')
+            window.parent.postMessage('MM:3PCunsupported', '*');
+        }
+        document.cookie = 'thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+     }
  window.addEventListener("message", receiveMessage, false);
 </script>
 </body>
