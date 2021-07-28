@@ -15,16 +15,6 @@
             }
         }
     </script>
-    <script src="https://soufianeym-eng.github.io/cookie-check/cookie.php?callback=myCallback"></script>
-    <script>
-        $.ajax({
-            url: 'https://soufianeym-eng.github.io/cookie-check/cookie.php',
-            dataType: 'jsonp',
-        }).done(function(is_enabled) {
-            if (is_enabled===1) {//third party cookies are enabled
-                console.log('Active')
-            }
-        })
-        </script>
+    <script src="https://soufianeym-eng.github.io/cookie-check/cookie.php"></script>
 </body>
 </html>
